@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.PharmacyController" spacing="10" padding="10">
+    <Label text="Pharmacy Management System" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <!-- Drugs Management -->
+    <Label text="Drugs Management" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <GridPane hgap="10" vgap="10">
+        <Label text="Drug Code:"/>
+        <TextField fx:id="drugCodeField"/>
+        <Label text="Name:"/>
+        <TextField fx:id="drugNameField"/>
+        <Label text="Price:"/>
+        <TextField fx:id="drugPriceField"/>
+        <Label text="Supplier Code:"/>
+        <TextField fx:id="supplierCodeField"/>
+        <Label text="Stock:"/>
+        <TextField fx:id="drugStockField"/>
+        <Button text="Add Drug" onAction="#handleAddDrug"/>
+    </GridPane>
+    <TableView fx:id="drugTable">
+        <TableColumn text="Code" fx:id="drugCodeColumn"/>
+        <TableColumn text="Name" fx:id="drugNameColumn"/>
+        <TableColumn text="Price" fx:id="drugPriceColumn"/>
+        <TableColumn text="Supplier" fx:id="drugSupplierColumn"/>
+        <TableColumn text="Stock" fx:id="drugStockColumn"/>
+    </TableView>
+
+    <!-- Suppliers Management -->
+    <Label text="Suppliers Management" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <GridPane hgap="10" vgap="10">
+        <Label text="Supplier Code:"/>
+        <TextField fx:id="supplierCodeField"/>
+        <Label text="Name:"/>
+        <TextField fx:id="supplierNameField"/>
+        <Label text="Location:"/>
+        <TextField fx:id="supplierLocationField"/>
+        <Button text="Add Supplier" onAction="#handleAddSupplier"/>
+    </GridPane>
+    <TableView fx:id="supplierTable">
+        <TableColumn text="Code" fx:id="supplierCodeColumn"/>
+        <TableColumn text="Name" fx:id="supplierNameColumn"/>
+        <TableColumn text="Location" fx:id="supplierLocationColumn"/>
+    </TableView>
+
+    <!-- Customers Management -->
+    <Label text="Customers Management" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <GridPane hgap="10" vgap="10">
+        <Label text="Customer ID:"/>
+        <TextField fx:id="customerIdField"/>
+        <Label text="Name:"/>
+        <TextField fx:id="customerNameField"/>
+        <Label text="Contact:"/>
+        <TextField fx:id="customerContactField"/>
+        <Button text="Add Customer" onAction="#handleAddCustomer"/>
+    </GridPane>
+    <TableView fx:id="customerTable">
+        <TableColumn text="ID" fx:id="customerIdColumn"/>
+        <TableColumn text="Name" fx:id="customerNameColumn"/>
+        <TableColumn text="Contact" fx:id="customerContactColumn"/>
+    </TableView>
+
+    <!-- Sales Management -->
+    <Label text="Sales Management" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <TableView fx:id="saleTable">
+        <TableColumn text="ID" fx:id="saleIdColumn"/>
+        <TableColumn text="Drug" fx:id="saleDrugColumn"/>
+        <TableColumn text="Quantity" fx:id="saleQuantityColumn"/>
+        <TableColumn text="Buyer" fx:id="saleBuyerColumn"/>
+        <TableColumn text="Date" fx:id="saleDateColumn"/>
+    </TableView>
+
+    <!-- Report Generation -->
+    <Button text="Generate Report" onAction="#handleGenerateReport"/>
+</VBox>
